@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
@@ -30,5 +31,21 @@ public class Main {
         .map(Estudante::getMatricula)
         .toList();
     System.out.println("Matriculas: "+ matriculas);
+
+    // criando ArrayList de pessoas e usando a stream para interrar sobre o array e retornar quantas pessoas
+    // tem sem repeticoes
+    // Para definir diretamente uma lista usamos o List<String> persons = List.of("nam1", "naam2")
+    ArrayList<String> persons = new ArrayList<>();
+    persons.add("Maria");
+    persons.add("Maria");
+    persons.add("Fulano");
+    persons.add("Zezin");
+    persons.add("Marilia");
+    persons.add("Marilia");
+
+    Long result = persons.stream()
+        .distinct()
+        .count();
+    System.out.println(result);
   }
 }
